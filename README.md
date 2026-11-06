@@ -1,6 +1,6 @@
 # IT Specialist Toolkit (Windows)
 
-A menu-driven Windows batch script that bundles 52 everyday IT support and network diagnostic tasks into one console tool. Built from day-to-day work as a network/IT specialist to speed up troubleshooting and PC setup.
+A menu-driven Windows batch script that bundles 53 everyday IT support and network diagnostic tasks into one console tool. Built from day-to-day work as a network/IT specialist to speed up troubleshooting and PC setup.
 
 ## Usage
 
@@ -63,6 +63,7 @@ A menu-driven Windows batch script that bundles 52 everyday IT support and netwo
 | 26 | Installed printer drivers | `Get-PrinterDriver` |
 | 39 | DirectX Diagnostic Tool | `dxdiag` |
 | 52 | List all drivers and export to `Drivers.csv` | `driverquery /v` |
+| 53 | Battery and energy efficiency reports (`battery-report.html`, `energy-report.html` next to the script) | `powercfg /batteryreport`, `powercfg /energy` |
 
 ### Users & policy
 
@@ -111,4 +112,4 @@ MIT
 
 ## Author
 
-Mehdi Gurbanzade · [LinkedIn](https://www.linkedin.com/in/mehdi-gurbanzade-21b463334/)
+Mehdi Gurbanzade · M.Sc. Data Science · [LinkedIn](https://www.linkedin.com/in/mehdi-gurbanzade-21b463334/)

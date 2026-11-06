@@ -23,6 +23,7 @@ echo 10. Nslookup (DNS query)                      23. Information about Windows
 echo 11. Show ARP Table                            24. Check last system format date               37. ToolBox                                                 50. Download Microsoft Teams	
 echo 12. Tracert (Trace route)                     25. Information about display                   38. Windows/Office activation                               51. Download Discord
 echo                                                                                                                                                           52. List drivers (export CSV)
+echo                                                                                                                                                           53. Battery & energy report
 echo 13. Show Route Table                          26. Show Printer Drivers                        39. DirectX Diagnostic Tool                                 x. Exit
 																								    
                     
@@ -31,7 +32,7 @@ echo 13. Show Route Table                          26. Show Printer Drivers     
 
 echo -----------------------------
 set "choice="
-set /p choice="Choose Number (1-52, x = Exit):"
+set /p choice="Choose Number (1-53, x = Exit):"
 
 
 if /i "%choice%"=="1" goto check_disk_free_space
@@ -86,6 +87,7 @@ if /i "%choice%"=="49" goto download_telegram
 if /i "%choice%"=="50" goto download_teams
 if /i "%choice%"=="51" goto download_discord
 if "%choice%"=="52" goto list_drivers
+if "%choice%"=="53" goto battery_report
 if /i "%choice%"=="x" goto exit
 goto menu
 
@@ -364,6 +366,15 @@ set /p ip=Enter the IP address to ping:
 ping %ip%
 pause
 goto menu
+
+
+:battery_report
+echo.
+echo Generating battery and energy reports...
+powercfg /batteryreport /output "%~dp0battery-report.html"
+powercfg /energy /output "%~dp0energy-report.html" /duration 60
+echo ✅ battery-report.html and energy-report.html are ready.
+pause & goto menu
 
 
 :check_del_temp
